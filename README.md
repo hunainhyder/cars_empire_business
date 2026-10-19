@@ -1,58 +1,64 @@
 # Cars Empire — Website
 
-A static, two-page business website for **Cars Empire**, a prestige & performance car dealer.
-Design inspired by the premium dark automotive-dealer aesthetic (à la autoselecta.com).
-No backend, no database, no build step — just open the files.
+A **Next.js** (App Router) business website for **Cars Empire**, a prestige & performance
+car dealer. Premium dark theme inspired by high-end automotive-dealer sites.
+Two pages only — a landing page and a collection listing. No car detail pages, no backend.
 
 ## Pages
 
-| File | Purpose |
-|------|---------|
-| `index.html` | Landing page — hero, featured cars, about, why-us, contact CTA |
-| `collections.html` | Full car collection with make filter + live search |
-
-> There are intentionally **no individual car detail pages** — the cards show all the info and an **Enquire** button (opens an email / contact CTA).
+| Route | File | Purpose |
+|-------|------|---------|
+| `/` | `app/page.js` | Landing — hero, stats, featured cars, about, why-us, contact CTA |
+| `/collections` | `app/collections/page.js` | Full collection with make filter + live search |
 
 ## Project structure
 
 ```
 cars_empire/
-├── index.html
-├── collections.html
-├── css/
-│   └── style.css
-├── js/
-│   └── main.js          # header, mobile menu, scroll reveal, filter/search
-└── images/
-    ├── hero.svg  banner.svg  cta.svg     # section backgrounds
-    └── car-01.svg … car-12.svg           # car placeholder images
+├── app/
+│   ├── layout.js            # fonts (next/font), metadata
+│   ├── globals.css          # all styles (dark premium theme)
+│   ├── page.js              # home page
+│   └── collections/page.js  # collection page
+├── components/
+│   ├── Header.js            # sticky nav + mobile menu (client)
+│   ├── Footer.js
+│   ├── CarCard.js
+│   ├── CtaBand.js
+│   ├── CollectionGrid.js    # filter + search (client)
+│   ├── ScrollReveal.js      # scroll-in animations (client)
+│   └── icons.js             # inline SVG icons
+├── lib/
+│   └── cars.js              # car inventory + contact details (edit here)
+├── public/
+│   └── images/              # hero/banner/cta + car-01…car-12 placeholder art
+├── next.config.mjs
+├── jsconfig.json            # "@/..." path alias
+└── package.json
 ```
 
-## How to view
+## Run locally
 
-Double-click `index.html` — it runs in any browser, offline. No server needed.
-(Optional, for a local server: `npx serve` or `python -m http.server` in this folder.)
+```bash
+npm install
+npm run dev     # http://localhost:3000
+```
 
-## Editing the content
+Production build:
 
-**Contact details** (phone/email/address) appear in the header, footer and CTA bands.
-Search & replace these placeholders across `index.html` and `collections.html`:
-- `+44 1234 567 890`
-- `sales@carsempire.co.uk`
-- `Empire House, 1 Showroom Way, Business Park, London, EC1 2AB`
+```bash
+npm run build
+npm start
+```
 
-**Cars** live directly in the HTML as `<article class="car-card">` blocks.
-To add / edit a car, copy an existing card block and change the title, specs and price.
-On `collections.html`, keep the two attributes so filtering/search works:
-- `data-make="audi|bmw|mercedes|porsche|landrover|lamborghini|bentley"`
-- `data-name="full model name in lowercase"`
+## Editing content
 
-**Real car photos** — the `images/car-XX.svg` files are tasteful placeholders.
-Replace them with real photos: drop a `car-01.jpg` into `/images`, then change that card's
-`<img src="images/car-01.svg">` to `images/car-01.jpg`. Recommended size ≈ 800×525px.
-
-## Colours (in `css/style.css`, top `:root` block)
-
-- Background `#0a0a0a` · Surfaces `#141414` · Gold accent `#c9a24b` · Text `#f4f4f4`
-
-Change `--gold` to re-brand the accent colour everywhere at once.
+- **Cars** — all inventory lives in `lib/cars.js`. Add/edit an object in the `cars`
+  array (title, specs, price, `make`, `image`). The home page shows the first 6;
+  the collection page shows all of them and filters by `make`.
+- **Contact details** (phone, email, address) — change once in the `site` object in
+  `lib/cars.js`; applied across the header, footer and CTA bands.
+- **Real car photos** — the `public/images/car-XX.svg` files are tasteful placeholders.
+  Drop a real photo (e.g. `car-01.jpg`, ~800×525px) into `public/images` and update
+  that car's `image` path in `lib/cars.js`.
+- **Accent colour** — change `--gold` in the `:root` block of `app/globals.css`.
