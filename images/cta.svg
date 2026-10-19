@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Visit showroom">
+  <defs>
+    <linearGradient id="hb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#15161a"/>
+      <stop offset="0.55" stop-color="#0c0d10"/>
+      <stop offset="1" stop-color="#050506"/>
+    </linearGradient>
+    <radialGradient id="hglow" cx="0.68" cy="0.32" r="0.85">
+      <stop offset="0" stop-color="#c9a24b" stop-opacity="0.22"/>
+      <stop offset="0.45" stop-color="#c9a24b" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#c9a24b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hfloor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#hb)"/>
+  <rect width="1920" height="1080" fill="url(#hglow)"/>
+  <!-- faint grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <line x1="0" y1="270" x2="1920" y2="270"/>
+    <line x1="0" y1="540" x2="1920" y2="540"/>
+    <line x1="0" y1="810" x2="1920" y2="810"/>
+    <line x1="480" y1="0" x2="480" y2="1080"/>
+    <line x1="960" y1="0" x2="960" y2="1080"/>
+    <line x1="1440" y1="0" x2="1440" y2="1080"/>
+  </g>
+  <ellipse cx="1020" cy="820" rx="760" ry="60" fill="url(#hfloor)"/>
+  <g transform="translate(560,470) scale(1.35)">
+    <path d="M48,150 C58,148 66,140 80,132 L150,110 C185,99 205,86 250,82 L360,76 C420,73 470,80 512,100 L560,122 C585,132 598,140 606,150 L612,154 C616,156 616,162 611,162 L560,162 C556,178 542,190 525,190 C508,190 494,178 490,162 L205,162 C201,178 187,190 170,190 C153,190 139,178 135,162 L52,162 C46,162 44,154 48,150 Z" fill="none" stroke="#c9a24b" stroke-opacity="0.5" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M48,150 C58,148 66,140 80,132 L150,110 C185,99 205,86 250,82 L360,76 C420,73 470,80 512,100 L560,122 C585,132 598,140 606,150 L612,154 C616,156 616,162 611,162 L560,162 C556,178 542,190 525,190 C508,190 494,178 490,162 L205,162 C201,178 187,190 170,190 C153,190 139,178 135,162 L52,162 C46,162 44,154 48,150 Z" fill="#c9a24b" fill-opacity="0.04"/>
+    <circle cx="170" cy="162" r="30" fill="none" stroke="#c9a24b" stroke-opacity="0.45" stroke-width="2.4"/>
+    <circle cx="525" cy="162" r="30" fill="none" stroke="#c9a24b" stroke-opacity="0.45" stroke-width="2.4"/>
+  </g>
+</svg>
