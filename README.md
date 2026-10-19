@@ -1,37 +1,47 @@
 # Cars Empire — Website
 
 A **Next.js** (App Router) business website for **Cars Empire**, a prestige & performance
-car dealer. Premium dark theme inspired by high-end automotive-dealer sites.
-Two pages only — a landing page and a collection listing. No car detail pages, no backend.
+car dealer. Clean, modern **light theme** with a vivid orange accent. Two pages only —
+a landing page and a collection listing. No car detail pages, no backend.
 
 ## Pages
 
 | Route | File | Purpose |
 |-------|------|---------|
-| `/` | `app/page.js` | Landing — hero, stats, featured cars, about, why-us, contact CTA |
-| `/collections` | `app/collections/page.js` | Full collection with make filter + live search |
+| `/` | `app/page.js` | Landing — hero + search, featured cars, browse by make, collections, how it works, reviews, FAQ, CTAs |
+| `/collections` | `app/collections/page.js` | Full stock with filter sidebar, search, sort and pagination |
+
+Supports query params: `/collections?category=japanese` (from the Collections menu)
+and `/collections?q=Porsche` (from the hero / make search).
+
+## Key features
+
+- **Collections mega-menu** in the navbar — a grid of category tiles with a "See all" button.
+- **Filterable listing** — make, body type, fuel and price filters, search, sort, and pagination (client-side over the static data).
+- Fully responsive with a mobile slide-in menu.
+- No auctions / buying / selling flow — cars are shown with a clear price and an **Enquire** (mailto) action.
 
 ## Project structure
 
 ```
 cars_empire/
 ├── app/
-│   ├── layout.js            # fonts (next/font), metadata
-│   ├── globals.css          # all styles (dark premium theme)
-│   ├── page.js              # home page
-│   └── collections/page.js  # collection page
+│   ├── layout.js            # Inter font + metadata
+│   ├── globals.css          # all styles (light theme)
+│   ├── page.js              # landing page
+│   └── collections/page.js  # collection listing
 ├── components/
-│   ├── Header.js            # sticky nav + mobile menu (client)
+│   ├── Header.js            # navbar + Collections mega-menu + mobile menu (client)
 │   ├── Footer.js
-│   ├── CarCard.js
-│   ├── CtaBand.js
-│   ├── CollectionGrid.js    # filter + search (client)
+│   ├── CarCard.js           # car card with shortlist + enquire (client)
+│   ├── CollectionTile.js    # category tile
+│   ├── CollectionBrowser.js # filters + search + sort + pagination (client)
+│   ├── Faq.js               # accordion (client)
 │   ├── ScrollReveal.js      # scroll-in animations (client)
 │   └── icons.js             # inline SVG icons
 ├── lib/
-│   └── cars.js              # car inventory + contact details (edit here)
-├── public/
-│   └── images/              # hero/banner/cta + car-01…car-12 placeholder art
+│   └── cars.js              # inventory, collections, makes, reviews, FAQs, contact details
+├── public/images/           # hero + car-01…15 + col-*.svg placeholder art
 ├── next.config.mjs
 ├── jsconfig.json            # "@/..." path alias
 └── package.json
@@ -44,21 +54,13 @@ npm install
 npm run dev     # http://localhost:3000
 ```
 
-Production build:
-
-```bash
-npm run build
-npm start
-```
+Production: `npm run build && npm start`
 
 ## Editing content
 
-- **Cars** — all inventory lives in `lib/cars.js`. Add/edit an object in the `cars`
-  array (title, specs, price, `make`, `image`). The home page shows the first 6;
-  the collection page shows all of them and filters by `make`.
-- **Contact details** (phone, email, address) — change once in the `site` object in
-  `lib/cars.js`; applied across the header, footer and CTA bands.
-- **Real car photos** — the `public/images/car-XX.svg` files are tasteful placeholders.
-  Drop a real photo (e.g. `car-01.jpg`, ~800×525px) into `public/images` and update
-  that car's `image` path in `lib/cars.js`.
-- **Accent colour** — change `--gold` in the `:root` block of `app/globals.css`.
+- **Cars** — edit the `cars` array in `lib/cars.js` (`price` and `mileageVal` are numbers so
+  sorting works). `make`, `body` and `tags` drive the filters and collection categories.
+- **Collections / makes / reviews / FAQs / contact details** — all in `lib/cars.js`.
+- **Real car photos** — the `public/images/*.svg` files are placeholders. Drop a real photo
+  (e.g. `car-01.jpg`, ~800×520px) into `public/images` and update the `image` path in `lib/cars.js`.
+- **Accent colour** — change `--accent` in the `:root` block of `app/globals.css`.
