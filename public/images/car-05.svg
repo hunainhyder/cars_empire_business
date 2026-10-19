@@ -1,32 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 525" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Audi RS Q8">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Audi RS Q8">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#1c1c1f"/>
-      <stop offset="1" stop-color="#0b0b0d"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7f8f9"/>
+      <stop offset="0.6" stop-color="#eceef1"/>
+      <stop offset="1" stop-color="#e2e5e9"/>
     </linearGradient>
-    <radialGradient id="glow" cx="0.72" cy="0.25" r="0.9">
-      <stop offset="0" stop-color="#c9a24b" stop-opacity="0.18"/>
-      <stop offset="0.5" stop-color="#c9a24b" stop-opacity="0.04"/>
-      <stop offset="1" stop-color="#c9a24b" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.05"/>
+    <radialGradient id="spot" cx="0.5" cy="0.28" r="0.75">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
       <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="car" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b7bcc4"/>
+      <stop offset="1" stop-color="#9aa0aa"/>
     </linearGradient>
   </defs>
-  <rect width="800" height="525" fill="url(#bg)"/>
-  <rect width="800" height="525" fill="url(#glow)"/>
-  <ellipse cx="400" cy="420" rx="330" ry="26" fill="url(#floor)"/>
+  <rect width="800" height="520" fill="url(#bg)"/>
+  <rect width="800" height="520" fill="url(#spot)"/>
+  <ellipse cx="400" cy="410" rx="300" ry="24" fill="#000000" opacity="0.07"/>
   <g transform="translate(80,150)">
-    <path d="M48,150 C58,148 66,140 80,132 L150,110 C185,99 205,86 250,82 L360,76 C420,73 470,80 512,100 L560,122 C585,132 598,140 606,150 L612,154 C616,156 616,162 611,162 L560,162 C556,178 542,190 525,190 C508,190 494,178 490,162 L205,162 C201,178 187,190 170,190 C153,190 139,178 135,162 L52,162 C46,162 44,154 48,150 Z" fill="none" stroke="#c9a24b" stroke-opacity="0.55" stroke-width="2.5" stroke-linejoin="round"/>
-    <path d="M48,150 C58,148 66,140 80,132 L150,110 C185,99 205,86 250,82 L360,76 C420,73 470,80 512,100 L560,122 C585,132 598,140 606,150 L612,154 C616,156 616,162 611,162 L560,162 C556,178 542,190 525,190 C508,190 494,178 490,162 L205,162 C201,178 187,190 170,190 C153,190 139,178 135,162 L52,162 C46,162 44,154 48,150 Z" fill="#c9a24b" fill-opacity="0.05"/>
-    <circle cx="170" cy="162" r="30" fill="none" stroke="#c9a24b" stroke-opacity="0.5" stroke-width="2.5"/>
-    <circle cx="525" cy="162" r="30" fill="none" stroke="#c9a24b" stroke-opacity="0.5" stroke-width="2.5"/>
-    <circle cx="170" cy="162" r="13" fill="none" stroke="#c9a24b" stroke-opacity="0.3" stroke-width="2"/>
-    <circle cx="525" cy="162" r="13" fill="none" stroke="#c9a24b" stroke-opacity="0.3" stroke-width="2"/>
+    <path d="M48,150 C58,148 66,140 80,132 L150,110 C185,99 205,86 250,82 L360,76 C420,73 470,80 512,100 L560,122 C585,132 598,140 606,150 L612,154 C616,156 616,162 611,162 L560,162 C556,178 542,190 525,190 C508,190 494,178 490,162 L205,162 C201,178 187,190 170,190 C153,190 139,178 135,162 L52,162 C46,162 44,154 48,150 Z" fill="url(#car)"/>
+    <path d="M48,150 C58,148 66,140 80,132 L150,110 C185,99 205,86 250,82 L360,76 C420,73 470,80 512,100 L560,122 C585,132 598,140 606,150 L612,154 C616,156 616,162 611,162 L560,162 C556,178 542,190 525,190 C508,190 494,178 490,162 L205,162 C201,178 187,190 170,190 C153,190 139,178 135,162 L52,162 C46,162 44,154 48,150 Z" fill="none" stroke="#7f8691" stroke-opacity="0.5" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="170" cy="162" r="30" fill="#5b616b"/><circle cx="170" cy="162" r="14" fill="#d7dade"/>
+    <circle cx="525" cy="162" r="30" fill="#5b616b"/><circle cx="525" cy="162" r="14" fill="#d7dade"/>
   </g>
-  <text x="48" y="470" font-family="'Oswald','Arial Narrow',sans-serif" font-size="30" font-weight="600" letter-spacing="1.5" fill="#f4f4f4" text-transform="uppercase">AUDI RS Q8</text>
-  <text x="48" y="498" font-family="'Oswald',sans-serif" font-size="15" letter-spacing="5" fill="#7a7a7a">PERFORMANCE SUV</text>
-  <text x="752" y="54" text-anchor="end" font-family="'Oswald',sans-serif" font-size="14" letter-spacing="4" fill="#5a5a5a">CARS EMPIRE</text>
-  <rect x="48" y="40" width="34" height="3" fill="#c9a24b"/>
+  <rect x="40" y="446" width="26" height="4" rx="2" fill="#f93a00"/>
+  <text x="40" y="482" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="700" fill="#1b1e22">Audi RS Q8</text>
+  <text x="760" y="46" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="#aab0b8">CARS EMPIRE</text>
 </svg>
